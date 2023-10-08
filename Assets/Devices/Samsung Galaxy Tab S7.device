@@ -1,0 +1,23 @@
+{
+    "friendlyName": "Samsung Galaxy Tab S7",
+    "version": 1,
+    "screens": [
+        {
+            "width": 2560,
+            "height": 1600,
+            "dpi": 450.0,
+            "presentation": {
+                "overlayPath": "Overlays/OverlayTabS7.png",
+                "borderSize": {
+                    "x": 25.0,
+                    "y": 25.0,
+                    "z": 25.0,
+                    "w": 25.0
+                }
+            }
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android"
+    }
+}

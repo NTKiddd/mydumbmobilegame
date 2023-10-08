@@ -2,20 +2,59 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
+
 
 public class Player : MonoBehaviour
 {
+    private Camera cam;
     private Rigidbody2D rb;
-    public float playerSpeed;
+    
     private Touch touch;
+    private Vector3 startPoint;
+    private Vector3 endPoint;
 
-    private void FixedUpdate()
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float maxDrag;
+    
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+    }
+
+    private void Update()
     {
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
-            Debug.Log(touch.position.x);
-            Debug.Log(touch.position.y);
+            
+            if (touch.phase == TouchPhase.Began)
+            {
+                startPoint = cam.ScreenToWorldPoint(touch.position);
+                startPoint.z = 0;
+                //Debug.Log(startPoint);
+                Debug.Log("Touch Pressed");
+            }
+            
+            // if (touch.phase == TouchPhase.Moved)
+            // {
+            //     //Debug.Log(endPoint);
+            //     Debug.Log("Touch Dragged");
+            // }
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                endPoint = cam.ScreenToWorldPoint(touch.position);
+                endPoint.z = 0;
+                //Debug.Log(endPoint);
+                Debug.Log("Touch Lifted/Released");
+                
+                Vector3 force = startPoint - endPoint;
+                Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
+                
+                rb.AddForce(clampedForce, ForceMode2D.Impulse);
+            }
         }
     }
 }
