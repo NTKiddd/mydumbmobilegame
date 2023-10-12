@@ -9,18 +9,22 @@ public class Player : MonoBehaviour
 {
     private Camera cam;
     private Rigidbody2D rb;
+    private Collider2D col;
     
     private Touch touch;
     private Vector3 startPoint;
     private Vector3 endPoint;
+    [SerializeField] private LayerMask jumpableLayer;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float maxDrag;
+    private bool canJump;
     
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -50,11 +54,20 @@ public class Player : MonoBehaviour
                 //Debug.Log(endPoint);
                 Debug.Log("Touch Lifted/Released");
                 
-                Vector3 force = startPoint - endPoint;
-                Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
-                
-                rb.AddForce(clampedForce, ForceMode2D.Impulse);
+                if (IsGrounded())
+                {
+                    Vector3 force = startPoint - endPoint;
+                    Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
+
+                    rb.AddForce(clampedForce, ForceMode2D.Impulse);
+                }
             }
         }
+    }
+
+    private bool IsGrounded()
+    {
+        var bounds = col.bounds;
+        return Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer);
     }
 }
