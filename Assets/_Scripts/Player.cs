@@ -10,15 +10,20 @@ public class Player : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     private Collider2D col;
+    [SerializeField] private Transform wallCheck;
     
     private Touch touch;
     private Vector3 startPoint;
     private Vector3 endPoint;
     [SerializeField] private LayerMask jumpableLayer;
+    [SerializeField] private LayerMask slideableLayer;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float maxDrag;
+    [SerializeField] private float wallSlideSpeed;
     private bool canJump;
+    private bool facingRight = true;
+    private bool isSliding;
     
     private void Awake()
     {
@@ -54,20 +59,53 @@ public class Player : MonoBehaviour
                 //Debug.Log(endPoint);
                 Debug.Log("Touch Lifted/Released");
                 
-                if (IsGrounded())
+                if (IsGrounded() || IsWalled())
                 {
                     Vector3 force = startPoint - endPoint;
                     Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
+
+                    if (force.x < 0 && facingRight || force.x > 0 && !facingRight)
+                    {
+                        facingRight = !facingRight;
+                        Flip();
+                    }
 
                     rb.AddForce(clampedForce, ForceMode2D.Impulse);
                 }
             }
         }
+        
+        WallSlide();
     }
 
     private bool IsGrounded()
     {
         var bounds = col.bounds;
         return Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer);
+    }
+
+    private bool IsWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, jumpableLayer);
+    }
+
+    private void WallSlide()
+    {
+        if (IsWalled() && !IsGrounded())
+        {
+            isSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isSliding = false;
+        }
+    }
+
+    private void Flip()
+    {
+        var scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
