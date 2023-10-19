@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     private Collider2D col;
+
     [SerializeField] private Transform wallCheck;
+
+    [SerializeField] private Trajectory trajectory;
     
     private Touch touch;
     private Vector3 startPoint;
@@ -43,20 +46,28 @@ public class Player : MonoBehaviour
                 startPoint = cam.ScreenToWorldPoint(touch.position);
                 startPoint.z = 0;
                 //Debug.Log(startPoint);
+                
+                    //trajectory.Show();
+                
                 Debug.Log("Touch Pressed");
             }
             
-            // if (touch.phase == TouchPhase.Moved)
-            // {
-            //     //Debug.Log(endPoint);
-            //     Debug.Log("Touch Dragged");
-            // }
+            if (touch.phase == TouchPhase.Moved)
+            {
+                endPoint = cam.ScreenToWorldPoint(touch.position);
+                var distance = Vector2.Distance(startPoint, endPoint);
+                var direction = (startPoint - endPoint).normalized;
+                var force = distance * direction * jumpForce;
+                
+                trajectory.UpdateDots(transform.position, force);
+            }
 
             if (touch.phase == TouchPhase.Ended)
             {
-                endPoint = cam.ScreenToWorldPoint(touch.position);
+                //endPoint = cam.ScreenToWorldPoint(touch.position);
                 endPoint.z = 0;
                 //Debug.Log(endPoint);
+                trajectory.Hide();
                 Debug.Log("Touch Lifted/Released");
                 
                 if (IsGrounded() || IsWalled())
