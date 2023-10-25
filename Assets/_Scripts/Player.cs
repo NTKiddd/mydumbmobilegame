@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
             
             if (touch.phase == TouchPhase.Moved)
             {
+                trajectory.Show();
                 endPoint = cam.ScreenToWorldPoint(touch.position);
                 var distance = Vector2.Distance(startPoint, endPoint);
                 var direction = (startPoint - endPoint).normalized;
