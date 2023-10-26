@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "70a89e7a-4a6e-43e7-88f1-f8620b46402d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "c422dced-c01f-403b-ae06-ca2eb7405d37",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c29965aa-0280-4a66-ac2f-2d9a5ce51bdd",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
