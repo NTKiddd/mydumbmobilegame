@@ -6,10 +6,10 @@
             "id": "70a89e7a-4a6e-43e7-88f1-f8620b46402d",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Jump",
                     "type": "Value",
                     "id": "c422dced-c01f-403b-ae06-ca2eb7405d37",
-                    "expectedControlType": "",
+                    "expectedControlType": "Touch",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -19,11 +19,11 @@
                 {
                     "name": "",
                     "id": "c29965aa-0280-4a66-ac2f-2d9a5ce51bdd",
-                    "path": "<Touchscreen>/primaryTouch",
+                    "path": "<Touchscreen>/touch0",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

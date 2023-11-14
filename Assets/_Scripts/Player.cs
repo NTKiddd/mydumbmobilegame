@@ -7,6 +7,7 @@ using UnityEngine.Android;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private InputHandler _input;
     private Camera cam;
     private Rigidbody2D rb;
     private Collider2D col;
@@ -34,56 +35,58 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
-
-    private void Update()
+    
+    private void OnEnable()
     {
-        if (Input.touchCount > 0)
+        _input.Touched += OnTouch;
+    }
+    
+    private void OnTouch(Touch[] touches)
+    {
+        //touches = _input.touches;
+        
+        if (touches[0].phase == TouchPhase.Began)
         {
-            touch = Input.GetTouch(0);
+            startPoint = cam.ScreenToWorldPoint(touch.position);
+            startPoint.z = 0;
+            //Debug.Log(startPoint);
             
-            if (touch.phase == TouchPhase.Began)
-            {
-                startPoint = cam.ScreenToWorldPoint(touch.position);
-                startPoint.z = 0;
-                //Debug.Log(startPoint);
-                
-                    //trajectory.Show();
-                
-                Debug.Log("Touch Pressed");
-            }
+                //trajectory.Show();
             
-            if (touch.phase == TouchPhase.Moved)
-            {
-                trajectory.Show();
-                endPoint = cam.ScreenToWorldPoint(touch.position);
-                var distance = Vector2.Distance(startPoint, endPoint);
-                var direction = (startPoint - endPoint).normalized;
-                var force = distance * direction * jumpForce;
-                
-                trajectory.UpdateDots(transform.position, force);
-            }
+            Debug.Log("Touch Pressed");
+        }
+        
+        if (touch.phase == TouchPhase.Moved)
+        {
+            trajectory.Show();
+            endPoint = cam.ScreenToWorldPoint(touch.position);
+            var distance = Vector2.Distance(startPoint, endPoint);
+            var direction = (startPoint - endPoint).normalized;
+            var force = distance * direction * jumpForce;
+            
+            trajectory.UpdateDots(transform.position, force);
+        }
 
-            if (touch.phase == TouchPhase.Ended)
+        if (touch.phase == TouchPhase.Ended)
+        {
+            //endPoint = cam.ScreenToWorldPoint(touch.position);
+            endPoint.z = 0;
+            //Debug.Log(endPoint);
+            trajectory.Hide();
+            Debug.Log("Touch Lifted/Released");
+            
+            if (IsGrounded() || IsWalled())
             {
-                //endPoint = cam.ScreenToWorldPoint(touch.position);
-                endPoint.z = 0;
-                //Debug.Log(endPoint);
-                trajectory.Hide();
-                Debug.Log("Touch Lifted/Released");
-                
-                if (IsGrounded() || IsWalled())
+                Vector3 force = startPoint - endPoint;
+                Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
+
+                if (force.x < 0 && facingRight || force.x > 0 && !facingRight)
                 {
-                    Vector3 force = startPoint - endPoint;
-                    Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
-
-                    if (force.x < 0 && facingRight || force.x > 0 && !facingRight)
-                    {
-                        facingRight = !facingRight;
-                        Flip();
-                    }
-
-                    rb.AddForce(clampedForce, ForceMode2D.Impulse);
+                    facingRight = !facingRight;
+                    Flip();
                 }
+
+                rb.AddForce(clampedForce, ForceMode2D.Impulse);
             }
         }
         
