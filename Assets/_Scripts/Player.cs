@@ -43,17 +43,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
-    }
-
+    
     private void Start()
     {
         stateMachine.SetState(new PlayerIdle());
@@ -68,96 +58,6 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.ExecuteFixedUpdate();
     }
-
-    // private void OnTouch(Touch[] touches, int touchCount)
-    // {
-    //     //touches = _input.touches;
-    //     
-    //     switch (touchCount)
-    //     {
-    //         case 1:
-    //         {
-    //             if (touches[0].phase == TouchPhase.Began)
-    //             {
-    //                 startPoint = cam.ScreenToWorldPoint(touches[0].position);
-    //                 startPoint.z = 0;
-    //                 //Debug.Log(startPoint);
-    //
-    //                 //trajectory.Show();
-    //
-    //                 Debug.Log("Touch Pressed");
-    //             }
-    //
-    //             if (touches[0].phase == TouchPhase.Moved)
-    //             {
-    //                 trajectory.Show();
-    //                 endPoint = cam.ScreenToWorldPoint(touches[0].position);
-    //                 var distance = Vector2.Distance(startPoint, endPoint);
-    //                 var direction = (startPoint - endPoint).normalized;
-    //                 var force = distance * direction * jumpForce;
-    //
-    //                 trajectory.UpdateDots(transform.position, force);
-    //             }
-    //
-    //             if (touches[0].phase == TouchPhase.Ended)
-    //             {
-    //                 //endPoint = cam.ScreenToWorldPoint(touch.position);
-    //                 endPoint.z = 0;
-    //                 //Debug.Log(endPoint);
-    //                 trajectory.Hide();
-    //                 Debug.Log("Touch Lifted/Released");
-    //
-    //                 if (IsGrounded() || IsWalled())
-    //                 {
-    //                     Vector3 force = startPoint - endPoint;
-    //                     Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpForce;
-    //
-    //                     if (force.x < 0 && facingRight || force.x > 0 && !facingRight)
-    //                     {
-    //                         facingRight = !facingRight;
-    //                         Flip();
-    //                     }
-    //
-    //                     rb.AddForce(clampedForce, ForceMode2D.Impulse);
-    //                 }
-    //             }
-    //             break;
-    //         }
-    //
-    //         case 2:
-    //         {
-    //             Touch firstTouch = touches[0];
-    //             Touch secondTouch = touches[1];
-    //
-    //             //Debug.Log("Double Touch");
-    //             
-    //             if (firstTouch.phase == TouchPhase.Began && secondTouch.phase == TouchPhase.Began)
-    //             {
-    //                 startPoint = cam.ScreenToWorldPoint((firstTouch.position + secondTouch.position) / 2);
-    //                 startPoint.z = 0;
-    //             }
-    //             
-    //             if (firstTouch.phase == TouchPhase.Moved && secondTouch.phase == TouchPhase.Moved)
-    //             {
-    //                 endPoint = cam.ScreenToWorldPoint((firstTouch.position + secondTouch.position) / 2);
-    //                 var distance = Vector2.Distance(startPoint, endPoint);
-    //                 Debug.Log(distance);
-    //
-    //                 if (distance > 1f)
-    //                 {
-    //                     
-    //                 }
-    //                 
-    //                 var direction = (endPoint - startPoint).normalized;
-    //                 var force = distance * direction * jumpForce;
-    //             }
-    //             
-    //             break;
-    //         }
-    //     }
-    //
-    //     WallSlide();
-    // }
 
     public bool IsGrounded()
     {
@@ -184,5 +84,16 @@ public class Player : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
         facingRight = !facingRight;
+    }
+
+    public void Respawn()
+    {
+        transform.position = CheckpointManager.Instance.lastCheckpoint;
+        
+        rb.velocity = Vector2.zero;
+        
+        var scale = transform.localScale;
+        scale.x = 1;
+        transform.localScale = scale;
     }
 }

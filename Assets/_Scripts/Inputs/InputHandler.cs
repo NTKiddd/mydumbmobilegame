@@ -12,8 +12,8 @@ public class InputHandler : Singleton<InputHandler>
     public delegate void TouchHandler(Touch[] touches, int touchCount);
     public event TouchHandler Touched;
 
-    private Touch[] touches { get; set; }
-    private int touchCount { get; set; }
+    public Touch[] touches { get; private set; }
+    public int touchCount { get; private set; }
 
     public override void Awake()
     {

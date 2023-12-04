@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerIdle : PlayerState
+
 {
     private float maxDrag;
 
@@ -75,7 +76,7 @@ public class PlayerIdle : PlayerState
                     Vector3 force = startPoint - endPoint;
                     Vector3 clampedForce = Vector3.ClampMagnitude(force, player.maxDrag) * player.jumpForce;
 
-                    //stateMachine.SetState(new PlayerJump(clampedForce));
+                    stateMachine.SetState(new PlayerJump(clampedForce));
 
                     // if (force.x < 0 && facingRight || force.x > 0 && !facingRight)
                     // {
