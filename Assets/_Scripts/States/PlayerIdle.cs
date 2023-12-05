@@ -53,7 +53,7 @@ public class PlayerIdle : PlayerState
 
                     //trajectory.Show();
 
-                    Debug.Log("Touch Pressed");
+                    //Debug.Log("Touch Pressed");
                     //Debug.Log(startPoint);
                 }
 
@@ -70,7 +70,7 @@ public class PlayerIdle : PlayerState
                     //endPoint = cam.ScreenToWorldPoint(touch.position);
                     endPoint.z = 0;
                     //trajectory.Hide();
-                    Debug.Log("Touch Released");
+                    //Debug.Log("Touch Released");
                     //Debug.Log(endPoint);
 
                     Vector3 force = startPoint - endPoint;

@@ -9,6 +9,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     
     [SerializeField] private string[] messages;
+    private int _messageIndex;
+    private bool _isActive;
 
     private void Awake()
     {
@@ -18,10 +20,40 @@ public class DialogueTrigger : MonoBehaviour
     private void OnEnable()
     {
         _ownedNPC.OnInteract += StartDialogue;
+        _ownedNPC.OnUninteract += StopDialogue;
+    }
+
+    private void OnDisable()
+    {
+        _ownedNPC.OnInteract -= StartDialogue;
+        _ownedNPC.OnUninteract -= StopDialogue;
     }
 
     private void StartDialogue()
     {
-        dialogueManager.StartDialogue(messages, _ownedNPC.npcName);
+        if (!_isActive)
+        {
+            _isActive = true;
+            
+            dialogueManager.LoadDialogue(messages, _ownedNPC.npcName);
+            _messageIndex = 0;
+            StartCoroutine(dialogueManager.DisplayMessage(_messageIndex));
+        }
+        else if (_isActive && !dialogueManager.textScrolling)
+        {
+            _messageIndex++;
+            StartCoroutine(dialogueManager.DisplayMessage(_messageIndex));
+
+            if (_messageIndex == messages.Length)
+            {
+                _isActive = false;
+            }
+        }
+    }
+    
+    private void StopDialogue()
+    {
+        _isActive = false;
+        dialogueManager.CloseDialogue();
     }
 }

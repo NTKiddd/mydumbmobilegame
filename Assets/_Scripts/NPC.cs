@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private bool _interactable;
 
     public event Action OnInteract;
+    public event Action OnUninteract;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,6 +27,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _interactable = false;
+            OnUninteract?.Invoke();
         }
     }
 
