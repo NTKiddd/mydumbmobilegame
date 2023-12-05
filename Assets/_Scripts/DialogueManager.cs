@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    // Components
     [SerializeField] private TMP_Text _nameDisplay;
     [SerializeField] private TMP_Text _messageDisplay;
     [SerializeField] private GameObject _dialoguePanel;
-
+    
+    // Variables
     private string _currentMessage;
     private string[] _messages;
     public bool textScrolling { get; private set; }
@@ -35,6 +37,8 @@ public class DialogueManager : MonoBehaviour
         if (index < _messages.Length)
         {
             int _characterIndex = 0;
+            
+            // display messages' characters one by one overtime 
             textScrolling = true;
             for ( int i = 0; i < _messages[index].Length + 1; i++)
             {

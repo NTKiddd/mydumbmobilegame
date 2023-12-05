@@ -31,6 +31,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartDialogue()
     {
+        // begin dialogue
         if (!_isActive)
         {
             _isActive = true;
@@ -39,6 +40,7 @@ public class DialogueTrigger : MonoBehaviour
             _messageIndex = 0;
             StartCoroutine(dialogueManager.DisplayMessage(_messageIndex));
         }
+        // continue dialogue
         else if (_isActive && !dialogueManager.textScrolling)
         {
             _messageIndex++;

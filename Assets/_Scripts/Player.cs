@@ -85,7 +85,8 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
         facingRight = !facingRight;
     }
-
+    
+    // Respawn at last checkpoint
     public void Respawn()
     {
         transform.position = CheckpointManager.Instance.lastCheckpoint;

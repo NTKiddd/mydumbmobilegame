@@ -12,7 +12,8 @@ public class Checkpoint : MonoBehaviour
     {
         _checkpointManager = CheckpointManager.Instance;
     }
-
+    
+    // store checkpoint position into CheckpointManager
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !_isChecked)
