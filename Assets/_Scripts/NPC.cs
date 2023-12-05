@@ -8,8 +8,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private Collider2D _interactionCollider;
     
     [Space(15)]
-    [SerializeField] private string _name;
+    public string npcName;
     [SerializeField] private bool _interactable;
+
+    public event Action OnInteract;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,11 +34,16 @@ public class NPC : MonoBehaviour
         if (_interactable && InputHandler.Instance.touchCount > 0)
         {
             var touch = InputHandler.Instance.touches[0];
-            var touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-
-            if (_interactionCollider.bounds.Contains((Vector2)touchPos))
+            
+            if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("Interact with NPC");
+                var touchPos = Camera.main!.ScreenToWorldPoint(touch.position);
+                
+                if (_interactionCollider.bounds.Contains((Vector2)touchPos))
+                {
+                    Debug.Log("Interact with NPC");
+                    OnInteract?.Invoke();
+                }
             }
         }
     }
