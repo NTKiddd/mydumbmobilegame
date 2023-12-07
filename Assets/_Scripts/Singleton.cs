@@ -35,7 +35,8 @@ public class Singleton<T> : MonoBehaviour where T:Component
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            //Debug.Log("Instance existed. Destroy " + this.gameObject.name);
         }
     }
 }
