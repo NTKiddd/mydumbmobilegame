@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -26,8 +27,8 @@ public class Player : MonoBehaviour
 
     public float jumpForce;
     public float maxDrag;
-    
-    [SerializeField] private float wallSlideSpeed;
+
+    public float wallSlideSpeed;
     public bool facingRight { get; private set; } = true;
     
     [Header("Dashing")]
@@ -43,7 +44,17 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
-    
+
+    private void OnEnable()
+    {
+        EventsManager.Instance.OnPlayerDeath += Respawn;
+    }
+
+    private void OnDisable()
+    {
+        //EventsManager.Instance.OnPlayerDeath -= Respawn;
+    }
+
     private void Start()
     {
         stateMachine.SetState(new PlayerIdle());
@@ -52,6 +63,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.ExecuteUpdate();
+
+        if (transform.position.y < -10)
+        {
+            EventsManager.Instance.PlayerDeath();
+        }
     }
     
     private void FixedUpdate()
@@ -59,20 +75,28 @@ public class Player : MonoBehaviour
         stateMachine.currentState.ExecuteFixedUpdate();
     }
 
-    public bool IsGrounded()
+    public bool IsGrounded(out GameObject groundedObject)
     {
         var bounds = col.bounds;
-        return Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer);
+        bool hit = Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer);
+        if (hit)
+        {
+            groundedObject = Physics2D.BoxCast(bounds.center, bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer).transform.gameObject;
+        }
+        else
+            groundedObject = null;
+        
+        return hit;
     }
 
-    private bool IsWalled()
+    public bool IsWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, jumpableLayer);
+        return Physics2D.OverlapCircle(wallCheck.position, 0.15f, jumpableLayer);
     }
 
     private void WallSlide()
     {
-        if (IsWalled() && !IsGrounded())
+        if (IsWalled() && !IsGrounded(out _))
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
         }
@@ -89,12 +113,13 @@ public class Player : MonoBehaviour
     // Respawn at last checkpoint
     public void Respawn()
     {
-        transform.position = CheckpointManager.Instance.lastCheckpoint;
-        
         rb.velocity = Vector2.zero;
+        
+        transform.position = CheckpointManager.Instance.lastCheckpoint;
         
         var scale = transform.localScale;
         scale.x = 1;
         transform.localScale = scale;
+        facingRight = true;
     }
 }

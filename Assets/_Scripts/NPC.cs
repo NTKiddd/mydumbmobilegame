@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
                 
                 if (_interactionCollider.bounds.Contains((Vector2)touchPos))
                 {
-                    Debug.Log("Interact with NPC");
+                    //Debug.Log("Interact with NPC");
                     OnInteract?.Invoke();
                 }
             }

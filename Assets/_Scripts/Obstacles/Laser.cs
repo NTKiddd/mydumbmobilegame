@@ -29,7 +29,7 @@ public class Laser : MonoBehaviour
         if (player != null)
         {
             Debug.Log("die");
-            player.Respawn();
+            EventsManager.Instance.PlayerDeath();
         }
     }
 
