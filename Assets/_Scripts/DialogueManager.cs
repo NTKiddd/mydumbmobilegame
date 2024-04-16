@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     
     public IEnumerator DisplayMessage(int index)
     {
+        // keep display all messages from the array
         if (index < _messages.Length)
         {
             int _characterIndex = 0;
@@ -43,7 +44,7 @@ public class DialogueManager : MonoBehaviour
             for ( int i = 0; i < _messages[index].Length + 1; i++)
             {
                 _messageDisplay.text = _messages[index].Substring(0, _characterIndex);
-                _characterIndex++;
+                _characterIndex++;  // increase character index everytime to display next character
                 yield return new WaitForSeconds(0.05f);
             }
             textScrolling = false;

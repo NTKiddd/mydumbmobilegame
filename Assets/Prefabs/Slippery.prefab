@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3769072598833927796}
   - component: {fileID: 3769072598833927797}
   - component: {fileID: 3769072598833927786}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slippery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3769072598833927787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.18, y: -2.38, z: 0}
-  m_LocalScale: {x: 2.1922188, y: 0.325, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.29579508, g: 0.8113208, b: 0.12552504, a: 1}
+  m_Sprite: {fileID: 173090886, guid: 095faf78a5ac67149abba75b25ea3386, type: 3}
+  m_Color: {r: 0.60778195, g: 0.9622642, b: 0.49384123, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
