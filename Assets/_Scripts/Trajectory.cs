@@ -1,65 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Trajectory : MonoBehaviour
 {
-    [SerializeField] private int dotsNumber;
-    [SerializeField] private GameObject dotsParent;
-    [SerializeField] private GameObject dotPrefab;
-    [SerializeField] private float dotSpacing;
-    [SerializeField] private float dotMinScale;
-    [SerializeField] private float dotMaxScale;
-    
-    private Transform[] dotsList;
-    private Vector2 pos;
-    private float timeStamp;
-    
-    void Start()
+    private LineRenderer _lineRenderer;
+    [SerializeField] private Player _player;
+    public List<Vector2> poss;
+
+    private void Awake()
     {
-        Hide();
-        PrepareDots();
+        _lineRenderer = GetComponent<LineRenderer>();
     }
 
-    void PrepareDots()
+    public void ToggleTrajectory(bool value)
     {
-        dotsList = new Transform[dotsNumber];
-        dotPrefab.transform.localScale = Vector2.one * dotMaxScale;
-        
-        float scale = dotMaxScale;
-        float scaleFactor = scale / dotsNumber;
-        
-        for (int i = 0; i < dotsNumber; i++)
+        _lineRenderer.enabled = value;
+    }
+
+    private void Update()
+    {
+        if (InputHandler.Instance.touchCount > 0)
         {
-            dotsList[i] = Instantiate(dotPrefab, null).transform;
-            dotsList[i].parent = dotsParent.transform;
+            var touch = InputHandler.Instance.touches[0];
+        }
+    }
+
+    public List<Vector2> SimulateTrajectory(Vector2 pos, Vector2 dir, float force)
+    {
+        List<Vector2> lineRendererPoints = new List<Vector2>();
+
+        float maxDuration = 3f;
+        float timeStep = 0.15f;
+        int maxSteps = (int)(maxDuration / timeStep);
+
+        Vector2 launchDirection = dir;
+        Vector2 launchPosition = pos;
+
+        var velocity = _player.jumpForce / _player.rb.mass * Time.fixedDeltaTime;
+
+        for (int i = 0; i < maxSteps; i++)
+        {
+            Vector2 calculatedPos = launchPosition + launchDirection * (velocity * i * timeStep);
+            calculatedPos.y += _player.rb.gravityScale / 2 * Mathf.Pow(i * timeStep, 2);
             
-            dotsList[i].localScale = Vector2.one * scale;
-            if (scale > dotMinScale)
+            lineRendererPoints.Add(calculatedPos);
+
+            if (Physics2D.CircleCast(calculatedPos, 0.5f, Vector2.zero))
             {
-                scale -= scaleFactor;
+                break;
             }
+
+            _lineRenderer.positionCount += 1;
+            _lineRenderer.SetPosition(i, calculatedPos);
         }
-    }
-    
-    public void UpdateDots(Vector3 ballPos, Vector2 forceApplied)
-    {
-        timeStamp = dotSpacing;
-        for (int i = 0; i < dotsNumber; i++)
-        {
-            pos.x = (ballPos.x + forceApplied.x * timeStamp);
-            pos.y = (ballPos.y + forceApplied.y * timeStamp) - (Physics2D.gravity.magnitude * timeStamp * timeStamp) / 2f;
-            dotsList[i].position = pos;
-            timeStamp += dotSpacing;
-        }
-    }
-    
-    public void Show()
-    {
-        dotsParent.SetActive(true);
-    }
-    public void Hide()
-    {
-        dotsParent.SetActive(false);
+
+        return lineRendererPoints;
     }
 }

@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform wallCheck;
 
-    [SerializeField] private Trajectory trajectory;
+    [SerializeField] public Trajectory trajectory;
     
     private Touch touch;
     private Vector3 startPoint;
