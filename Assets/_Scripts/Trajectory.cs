@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Trajectory : MonoBehaviour
 {
-    private LineRenderer _lineRenderer;
+    public LineRenderer _lineRenderer;
     [SerializeField] private Player _player;
     public List<Vector2> poss;
 
@@ -47,8 +47,9 @@ public class Trajectory : MonoBehaviour
             
             lineRendererPoints.Add(calculatedPos);
 
-            if (Physics2D.CircleCast(calculatedPos, 0.5f, Vector2.zero))
+            if (Physics2D.CircleCast(calculatedPos, 0.1f, Vector2.zero, 0f, LayerMask.NameToLayer("Ground")))
             {
+                Debug.Log("trajectory end at " + calculatedPos);
                 break;
             }
 
@@ -57,5 +58,30 @@ public class Trajectory : MonoBehaviour
         }
 
         return lineRendererPoints;
+    }
+    
+    public Vector2[] Plot(Rigidbody2D rb, Vector2 pos, Vector2 velocity, int steps)
+    {
+        Vector2[] results = new Vector2[steps];
+        float timeStep = Time.fixedDeltaTime / Physics2D.velocityIterations;
+        Vector2 gravityAccel = Physics2D.gravity * (rb.gravityScale * Mathf.Pow(timeStep, 2));
+        
+        float drag = 1f - timeStep * rb.drag;
+        Vector2 moveStep = velocity * timeStep;
+        
+        for (int i = 0; i < steps; i++)
+        {
+            moveStep += gravityAccel;
+            moveStep *= drag;
+            pos += moveStep;
+            results[i] = pos;
+        }
+        _lineRenderer.positionCount = results.Length;
+        for (int i = 0; i < results.Length; i++)
+        {
+            _lineRenderer.SetPosition(i, results[i]);
+        }
+        
+        return results;
     }
 }

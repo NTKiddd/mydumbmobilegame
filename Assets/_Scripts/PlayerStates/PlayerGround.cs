@@ -63,8 +63,11 @@ public class PlayerGround : PlayerState
                     
                     _lineRenderer.positionCount = 2;
                     _lineRenderer.SetPosition(1, endPoint);
-
-                    player.trajectory.poss = player.trajectory.SimulateTrajectory(player.transform.position, direction, player.jumpForce);
+                    
+                    player.trajectory.ToggleTrajectory(true);
+                    player.trajectory.Plot(player.rb, player.transform.position, Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);  
+                    
+                    //player.trajectory.poss = player.trajectory.SimulateTrajectory(player.transform.position, direction, player.jumpForce);
                 }
 
                 if (touch.phase == TouchPhase.Ended && touchStarted)
@@ -73,6 +76,7 @@ public class PlayerGround : PlayerState
                     endPoint.z = 0;
                     
                     Debug.Log(startPoint + ", " + endPoint);
+                    player.trajectory.ToggleTrajectory(false);
 
                     if (Vector2.Distance(startPoint, endPoint) > 0.2f)
                     {
@@ -80,9 +84,7 @@ public class PlayerGround : PlayerState
                         Vector3 clampedForce = Vector3.ClampMagnitude(force, player.maxDrag) * player.jumpForce;
                         
                         player.Flip();
-                        //stateMachine.SetState(new PlayerJump(clampedForce));
-                        
-                        
+                        stateMachine.SetState(new PlayerJump(clampedForce));
                     }
                     
                     touchStarted = false;
