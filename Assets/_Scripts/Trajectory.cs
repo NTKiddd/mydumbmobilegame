@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class Trajectory : MonoBehaviour
 {
-    public LineRenderer _lineRenderer;
-    [SerializeField] private Player _player;
-    public List<Vector2> poss;
+    private LineRenderer _lineRenderer;
+    private Player _player;
+    private List<Vector2> poss;
 
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        _player = GetComponent<Player>();
     }
 
     public void ToggleTrajectory(bool value)
     {
+        _lineRenderer.positionCount = 0;
         _lineRenderer.enabled = value;
     }
 

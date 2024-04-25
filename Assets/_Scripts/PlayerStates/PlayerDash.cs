@@ -46,6 +46,7 @@ public class PlayerDash : PlayerState
         }
         else
         {
+            player.rb.velocity = new Vector2(player.rb.velocity.x / 2, player.rb.velocity.y);
             stateMachine.SetState(new PlayerFall());
         }
     }

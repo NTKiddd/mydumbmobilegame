@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353469349086445448, guid: 3fbaca5c4a70edf43ab820f15c05510a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1353469349086445448, guid: 3fbaca5c4a70edf43ab820f15c05510a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06afb3aa7f12a74b922ed9e87b72a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <_input>k__BackingField: {fileID: 0}
 --- !u!114 &124554343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +811,7 @@ RectTransform:
   - {fileID: 1268953022}
   - {fileID: 1709051641}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1019,7 +1020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543098470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.40000823, y: 0.000000052154064, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1481,13 +1482,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722658431}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24120548, y: 0.09327854, z: 0.06158845}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.393149, y: 1.5466694, z: 0.06158845}
+  m_LocalScale: {x: 0.8, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1000601301}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &722658433
 MonoBehaviour:
@@ -1501,9 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c97b0635f36f0343b2838010c0ed506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lineRenderer: {fileID: 0}
-  _player: {fileID: 1000601302}
-  poss: []
 --- !u!120 &722658434
 LineRenderer:
   serializedVersion: 2
@@ -1635,7 +1633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &747418837
 PolygonCollider2D:
@@ -1792,8 +1790,9 @@ Transform:
   - {fileID: 797629010}
   - {fileID: 987169244}
   - {fileID: 2093548031}
+  - {fileID: 1632550216}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000601297
 GameObject:
@@ -1929,6 +1928,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 543098471}
+  - {fileID: 722658432}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1956,8 +1956,8 @@ MonoBehaviour:
   jumpForce: 15
   maxDrag: 2.5
   wallSlideSpeed: 0.7
-  dashSpeed: 20
-  dashTime: 0.2
+  dashSpeed: 24
+  dashTime: 0.17
   canDash: 0
 --- !u!120 &1000601303
 LineRenderer:
@@ -7402,6 +7402,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521660115}
   m_CullTransparentMesh: 1
+--- !u!1 &1632550215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632550216}
+  - component: {fileID: 1632550217}
+  m_Layer: 0
+  m_Name: TouchManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1632550216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632550215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 987383445}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632550217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632550215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8164bf8d034917e48a460de6ea52bc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663550293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +7698,7 @@ Transform:
   - {fileID: 1177518841}
   - {fileID: 1020417986}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1709051640
 GameObject:
@@ -8039,7 +8084,7 @@ Transform:
   m_Children:
   - {fileID: 1406215193}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023186899
 GameObject:
@@ -8106,7 +8151,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035958842
 GameObject:
@@ -8304,7 +8349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2814119251050196029, guid: 9c1ef0414561bfc4496276d2556c1a4d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2814119251050196029, guid: 9c1ef0414561bfc4496276d2556c1a4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8375,7 +8420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451927798956589356, guid: e071f58789956804e8c3150627571d7e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4451927798956589356, guid: e071f58789956804e8c3150627571d7e, type: 3}
       propertyPath: m_LocalPosition.x
