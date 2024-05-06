@@ -96,10 +96,10 @@ public class Player : MonoBehaviour
 
     private void WallSlide()
     {
-        if (IsWalled() && !IsGrounded(out _))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
-        }
+        // if (IsWalled() && !IsGrounded(out _))
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        // }
     }
 
     public void Flip()

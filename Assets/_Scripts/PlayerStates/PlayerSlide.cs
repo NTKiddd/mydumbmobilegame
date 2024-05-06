@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class PlayerSlide : PlayerGround
 {
+    private float _gravity;
+    
     public override void Enter()
     {
         base.Enter();
         
         name = "Slide";
         Debug.Log(name);
+        
+        _gravity = player.rb.gravityScale;
     }
 
     public override void ExecuteUpdate()
     {
         base.ExecuteUpdate();
-        
-        player.rb.velocity = new Vector2(player.rb.velocity.x, Mathf.Clamp(player.rb.velocity.y, -player.wallSlideSpeed, float.MaxValue));
+
+        if (input.touchCount > 0)
+        {
+            Debug.Log("hold");
+            player.rb.gravityScale = 0;
+            player.rb.velocity = new Vector2(player.rb.velocity.x, player.rb.velocity.y);
+        }
+        else
+        {
+            Debug.Log("slide");
+            player.rb.gravityScale = _gravity;
+            player.rb.velocity = new Vector2(player.rb.velocity.x, Mathf.Clamp(player.rb.velocity.y, -player.wallSlideSpeed, float.MaxValue));
+        }
     }
 
     public override void ExecuteFixedUpdate()

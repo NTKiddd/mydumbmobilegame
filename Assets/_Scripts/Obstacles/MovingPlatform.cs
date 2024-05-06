@@ -6,7 +6,7 @@ using DG.Tweening;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : Platform
 {
     private Vector2 startPos;
     private Vector2 endPos;
@@ -23,6 +23,16 @@ public class MovingPlatform : MonoBehaviour
         MoveForward();
     }
 
+    public override void PlatformTrigger(Player player)
+    {
+        //player.transform.parent = transform;
+    }
+
+    public override void PlatformCancel(Player player)
+    {
+        //player
+    }
+
     private void MoveForward()
     {
         transform.DOMove(endPos, _moveTime).SetEase(Ease.Linear).SetDelay(_waitTime)
@@ -37,13 +47,18 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent(out Player player))
         {
-            if (other.gameObject.GetComponent<Player>().IsGrounded(out GameObject groundedObject))
+            if (player.IsGrounded(out GameObject groundedObject))
             {
                 if (groundedObject == gameObject)
                 {
                     other.transform.parent = transform;
+                    Debug.Log(groundedObject.gameObject.name);
+                }
+                else
+                {
+                    other.transform.parent = null;
                 }
             }
         }

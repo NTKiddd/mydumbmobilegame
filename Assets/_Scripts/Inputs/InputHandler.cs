@@ -13,7 +13,9 @@ public class InputHandler : Singleton<InputHandler>
     
     [field:SerializeField] public PlayerInput input { get; private set; }
     [field:SerializeField] public Vector2[] startPositions { get; private set; }
-
+    
+    // screen rect
+    private Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
     public Touch[] touches { get; private set; }
     public int touchCount { get; private set; }
 
@@ -25,6 +27,7 @@ public class InputHandler : Singleton<InputHandler>
     private void Start()
     {
         startPositions = new Vector2[5];
+        //Debug.Log(Camera.main.ScreenToWorldPoint(new Vector2(-Screen.width, -Screen.height)));
     }
 
     private void OnEnable()
@@ -48,6 +51,16 @@ public class InputHandler : Singleton<InputHandler>
         {
             Touched?.Invoke(touches, touchCount);
             //Debug.Log(Input.touches[0].position);
+            
+            // Check if touch is inside screen
+            // if (screenRect.Contains(Input.touches[0].position)) 
+            // {
+            //     Debug.Log("Inside");
+            // }
+            // else
+            // {
+            //     Debug.Log("Outside");
+            // }
         }
     }
 

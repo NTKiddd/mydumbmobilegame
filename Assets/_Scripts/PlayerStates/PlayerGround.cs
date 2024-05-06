@@ -101,6 +101,13 @@ public class PlayerGround : PlayerState
                             stateMachine.SetState(new PlayerJump(clampedForce));
                         }
                     }
+                    
+                    if (touch.phase == TouchPhase.Canceled)
+                    {
+                        _lineRenderer.positionCount = 0;
+                        player.trajectory.ToggleTrajectory(false);
+                        touchStarted = false;
+                    }
                     break;
                 }
             } 
