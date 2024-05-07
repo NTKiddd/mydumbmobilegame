@@ -19,7 +19,7 @@ public class DynamicPlatform : MonoBehaviour
 
     private IEnumerator Fall()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.01f);
         _rb.bodyType = RigidbodyType2D.Dynamic;
     }
     

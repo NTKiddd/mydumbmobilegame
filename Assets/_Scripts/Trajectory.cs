@@ -12,7 +12,7 @@ public class Trajectory : MonoBehaviour
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        _player = GetComponent<Player>();
+        _player = GetComponentInParent<Player>();
     }
 
     public void ToggleTrajectory(bool value)
@@ -66,7 +66,7 @@ public class Trajectory : MonoBehaviour
     {
         Vector2[] results = new Vector2[steps];
         float timeStep = Time.fixedDeltaTime / Physics2D.velocityIterations;
-        Vector2 gravityAccel = Physics2D.gravity * (rb.gravityScale * Mathf.Pow(timeStep, 2));
+        Vector2 gravityAccel = Physics2D.gravity * (_player.gravity * Mathf.Pow(timeStep, 2));
         
         float drag = 1f - timeStep * rb.drag;
         Vector2 moveStep = velocity * timeStep;

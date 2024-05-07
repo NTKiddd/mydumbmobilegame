@@ -10,6 +10,8 @@ public class PlayerFall : PlayerAir
         
         name = "Fall";
         Debug.Log(name);
+        
+        player.animator.Play("Fall");
     }
 
     public override void ExecuteUpdate()

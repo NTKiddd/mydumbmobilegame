@@ -92,7 +92,7 @@ public class PlayerGround : PlayerState
                         touchStarted = false;
                         _lineRenderer.positionCount = 0;
                         
-                        if (Vector2.Distance(startPoint, endPoint) > 0.2f)
+                        if (Vector2.Distance(startPoint, endPoint) > 0.25f)
                         {
                             Vector3 force = startPoint - endPoint;
                             Vector3 clampedForce = Vector3.ClampMagnitude(force, player.maxDrag) * player.jumpForce;
@@ -115,7 +115,7 @@ public class PlayerGround : PlayerState
         
         if (touchStarted)
         {
-            player.trajectory.Plot(player.rb, player.transform.position, Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
+            player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + player.transform.localScale.y), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
         }
     }
 

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Camera cam { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Collider2D col { get; private set; }
+    public Animator animator { get; private set; }
 
     [SerializeField] private Transform wallCheck;
 
@@ -23,10 +24,10 @@ public class Player : MonoBehaviour
     private Vector3 startPoint;
     private Vector3 endPoint;
     public LayerMask jumpableLayer;
-    [SerializeField] private LayerMask slideableLayer;
 
     public float jumpForce;
     public float maxDrag;
+    public float gravity;
 
     public float wallSlideSpeed;
     public bool facingRight { get; private set; } = true;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         cam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()

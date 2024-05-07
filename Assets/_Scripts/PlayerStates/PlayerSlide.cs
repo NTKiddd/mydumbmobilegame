@@ -18,20 +18,20 @@ public class PlayerSlide : PlayerGround
 
     public override void ExecuteUpdate()
     {
-        base.ExecuteUpdate();
-
         if (input.touchCount > 0)
         {
-            Debug.Log("hold");
+            //Debug.Log("hold");
             player.rb.gravityScale = 0;
-            player.rb.velocity = new Vector2(player.rb.velocity.x, player.rb.velocity.y);
+            player.rb.velocity = new Vector2(player.rb.velocity.x, 0);
         }
         else
         {
-            Debug.Log("slide");
+            //Debug.Log("slide");
             player.rb.gravityScale = _gravity;
             player.rb.velocity = new Vector2(player.rb.velocity.x, Mathf.Clamp(player.rb.velocity.y, -player.wallSlideSpeed, float.MaxValue));
         }
+        
+        base.ExecuteUpdate();
     }
 
     public override void ExecuteFixedUpdate()
@@ -42,6 +42,8 @@ public class PlayerSlide : PlayerGround
     public override void Exit()
     {
         base.Exit();
+
+        player.rb.gravityScale = player.gravity;
     }
 
     public override void Transition()

@@ -21,6 +21,8 @@ public class PlayerJump : PlayerAir
         //Debug.Log(_force);
         player.rb.velocity = Vector2.zero;
         player.rb.AddForce(_force, ForceMode2D.Impulse);
+        
+        player.animator.Play("Jump");
     }
 
     public override void ExecuteUpdate()

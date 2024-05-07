@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,6 +71,42 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -80,7 +116,1603 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 512
+        width: 13
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ed8320a439c644cb7aa5a9e1c4b6b9
+      internalID: 623354637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 512
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5777eacc840134c9db674856a9da42
+      internalID: 586787345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 512
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0b6edfb4c2c14478fd0bfe8c424270
+      internalID: 1092904261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 512
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ba3802cf0de7543ac72926e685aed9
+      internalID: 1894194775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 512
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de8c350af8ff6e479861f3aa23d4d93
+      internalID: -1678026547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 512
+        width: 13
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb687d3041c4434fbbfc7ed725039e9
+      internalID: -1150406742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 480
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f22d3b589d47a40a452183bd67f203
+      internalID: -2101613047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 480
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29364bcb49735874ea0df6720812da51
+      internalID: 947725096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_8
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 480
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e86806c5cf81843937b40a030f5f33
+      internalID: -726345591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 448
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71936d110145c049b1d366e2fed636d
+      internalID: 283794401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 448
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f635422974e9416449a76c988a9340f2
+      internalID: 349685032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 448
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbfeecca6439c742bc47e8c41fdff35
+      internalID: 1492224931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_12
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 448
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f14dbc0e794ba7499133b378ed7ef32
+      internalID: 2145392547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd13976603336494ea190d404da82133
+      internalID: 14212289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_14
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9899ed7da6bee804d9e8b901cadbd25e
+      internalID: -697762406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c03f77b7c72c640bcc2efb1ee7820b
+      internalID: -1576394881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_16
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70674c2db464c734b8fb928b2d7b929f
+      internalID: -1717108147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97cf4adbc23d3b4489b2131b33ef2ce5
+      internalID: 247494842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_18
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 416
+        width: 13
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a066d90341e9cb459781ee5dbe08ae7
+      internalID: 1908592215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 416
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcef9c3c9420f804d885be8688120d4e
+      internalID: -409786357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_20
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 416
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0883b0f59c997504caa74e64974c5c1d
+      internalID: 1301638972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_21
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 384
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d23c9169ce011949a84527ddd8f2b0d
+      internalID: 881383005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 384
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81310850c4fe0b468811857513f2199
+      internalID: 280540557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_23
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 352
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2793967189f4a46bff329198fae299
+      internalID: -1169089976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_24
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 352
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f398d5c3bb0a34ca4d2dc041471fae
+      internalID: -106008845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_25
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 354
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe71e6c4b9e3b7b478e36e3984163487
+      internalID: 1586379547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_26
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 353
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea987ab4754d60c4889204abb378a2b9
+      internalID: -456747398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_27
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 352
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60083316e1ecd614aaa6113f99bf6a44
+      internalID: -2052422933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_28
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 352
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd9e78c0d1438d43874aaf4d9fba181
+      internalID: -2051370529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_29
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 354
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952d9026209dab848bcaf7817ff590b4
+      internalID: 1879053168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_30
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 353
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e97233a16d1d6447bf37dbea2e051bf
+      internalID: -612760668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_31
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 322
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248c9671be16a8648922178c2645a717
+      internalID: 97704515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_32
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 320
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbb1b4be07266b4e87a9d4705fd4fda
+      internalID: -1827502777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_33
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 320
+        width: 11
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d735571554125243852e25c28fcbef8
+      internalID: 1423169604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_34
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 320
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5849a865935a4864b812d2605f7ec5dc
+      internalID: -65236990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_35
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 320
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b132cc357d0a8c14aa34c333b9c66d64
+      internalID: 217355073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 289
+        width: 26
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c4bcaf2df6f5245affd86baa1bd92f
+      internalID: -189907350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_37
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 288
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef800a802a544a4dad698daa68aaddf
+      internalID: 1714828102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_38
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 288
+        width: 11
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d7c2dd305f01d4585caf04fd008fc5
+      internalID: 1810347053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_39
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 288
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fecbbe4b6280cf418147187bf6b2305
+      internalID: 768011474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_40
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 288
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e61b71fd88ad3146bf8d48f844fd671
+      internalID: 591066646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_41
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 256
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1267ba3637bd1940b8bc357a7423c2f
+      internalID: -864886169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_42
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 256
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857b16f46cd1da14d80b0689f718c656
+      internalID: 772571088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_43
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 226
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f84dbdae3d5684d9477142b9c119a6
+      internalID: 1649754552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_44
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 226
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a79dc52673cfea44b16f34ecd23c858
+      internalID: 83660367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_45
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 226
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcee8508fe3a4a4784e3171d77fde1d
+      internalID: -2096090638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_46
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 195
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4326532ddaf60c458342b734d5e6e1d
+      internalID: -1585200007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_47
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 195
+        width: 14
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a24a1a59261ae545a5d3c88ff702954
+      internalID: -327133790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_48
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 195
+        width: 14
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a6b136a7613ed4488f1a5e42b7f93e
+      internalID: 1582529872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_49
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 160
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea9914881632f446a8382a86d954e6d
+      internalID: 658479315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_50
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 160
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188409b3ef085624c8eea2ac68b772fe
+      internalID: 1419665561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_51
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 160
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e53245b481bf2418ac4043a66e5505
+      internalID: -138754182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_52
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 160
+        width: 13
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e3cd1e01ccf4947b24db802a8b8d47
+      internalID: 1211683488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_53
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 128
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7859ff506578ace41b8b27850c710d8c
+      internalID: -204799112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_54
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 128
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dd6d1a06d511244a0088befeba2db9
+      internalID: -1109264262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_55
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 128
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bff490854997c42b768038416d70c9
+      internalID: -2029815521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_56
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 128
+        width: 16
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee554c366b8c092408a0b77239085207
+      internalID: -1180653389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_57
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 128
+        width: 16
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ad6d05077714e4496d08752acba121
+      internalID: -1442721607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_58
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 98
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e25b88d7794c3428a1d67bb050a0ee
+      internalID: 179744559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_59
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 98
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a8d21b7e1b5364c9900575dca1b385
+      internalID: 997596442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_60
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 98
+        width: 11
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ddc8d8a28277d4482b9fb382c8d59d
+      internalID: -97671207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_61
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 66
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41b85b3f3e44b741ae49f6765fd2b1a
+      internalID: 403366094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_62
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 34
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49035f0f943f634b8ab689a6f085edf
+      internalID: -1139715446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_63
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 34
+        width: 12
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b8041d12b10464b869a5943825ee06
+      internalID: 730330719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_64
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 37
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2352a0c532441840890fcdba863d1bb
+      internalID: 1974478240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_65
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 41
+        width: 14
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ba942c592a6df42b53bdcbe96f04fc
+      internalID: -707559441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_66
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 42
+        width: 13
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb91986f693c3c4ca3476492d27650c
+      internalID: 1885147199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_67
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 45
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed93f1b1c1e2114a87d91c7b17038aa
+      internalID: 889664429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_68
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 46
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f0dcd888f72974489b394253ba4981
+      internalID: 40396497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_69
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 48
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03661ea802ae1a542a5cb1450ff6cc9b
+      internalID: 1233532154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_70
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 48
+        width: 13
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6071df6ea9d0f46bc33a4a3873044b
+      internalID: 776841228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_71
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d535b772bc53442969fc49e7280a4a
+      internalID: 617568032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_72
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc6ea0943e2676469b27b0ba2a6889a
+      internalID: 125909163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_73
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4dc9824c15160d478e8648453588824
+      internalID: 297500747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_74
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 0
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0bcf740657c3c34699240e7eb6722c2
+      internalID: 1475833631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiny Alchemist Sprite Sheet 48x32_75
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 17
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb4a4e5c7a201145a574f75244a79cf
+      internalID: -1518729196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -91,7 +1723,83 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tiny Alchemist Sprite Sheet 48x32_22: 280540557
+      Tiny Alchemist Sprite Sheet 48x32_5: -1150406742
+      Tiny Alchemist Sprite Sheet 48x32_30: -612760668
+      Tiny Alchemist Sprite Sheet 48x32_37: 1714828102
+      Tiny Alchemist Sprite Sheet 48x32_24: -106008845
+      Tiny Alchemist Sprite Sheet 48x32_21: 881383005
+      Tiny Alchemist Sprite Sheet 48x32_58: 179744559
+      Tiny Alchemist Sprite Sheet 48x32_54: -1109264262
+      Tiny Alchemist Sprite Sheet 48x32_17: 247494842
+      Tiny Alchemist Sprite Sheet 48x32_71: 617568032
+      Tiny Alchemist Sprite Sheet 48x32_59: 997596442
+      Tiny Alchemist Sprite Sheet 48x32_18: 1908592215
+      Tiny Alchemist Sprite Sheet 48x32_57: -1442721607
+      Tiny Alchemist Sprite Sheet 48x32_31: 97704515
+      Tiny Alchemist Sprite Sheet 48x32_53: -204799112
+      Tiny Alchemist Sprite Sheet 48x32_66: 1885147199
+      Tiny Alchemist Sprite Sheet 48x32_0: 623354637
+      Tiny Alchemist Sprite Sheet 48x32_68: 40396497
+      Tiny Alchemist Sprite Sheet 48x32_33: 1423169604
+      Tiny Alchemist Sprite Sheet 48x32_63: 730330719
+      Tiny Alchemist Sprite Sheet 48x32_34: -65236990
+      Tiny Alchemist Sprite Sheet 48x32_23: -1169089976
+      Tiny Alchemist Sprite Sheet 48x32_50: 1419665561
+      Tiny Alchemist Sprite Sheet 48x32_73: 297500747
+      Tiny Alchemist Sprite Sheet 48x32_27: -2052422933
+      Tiny Alchemist Sprite Sheet 48x32_35: 217355073
+      Tiny Alchemist Sprite Sheet 48x32_16: -1717108147
+      Tiny Alchemist Sprite Sheet 48x32_60: -97671207
+      Tiny Alchemist Sprite Sheet 48x32_62: -1139715446
+      Tiny Alchemist Sprite Sheet 48x32_19: -409786357
+      Tiny Alchemist Sprite Sheet 48x32_55: -2029815521
+      Tiny Alchemist Sprite Sheet 48x32_26: -456747398
+      Tiny Alchemist Sprite Sheet 48x32_2: 1092904261
+      Tiny Alchemist Sprite Sheet 48x32_8: -726345591
+      Tiny Alchemist Sprite Sheet 48x32_70: 776841228
+      Tiny Alchemist Sprite Sheet 48x32_25: 1586379547
+      Tiny Alchemist Sprite Sheet 48x32_56: -1180653389
+      Tiny Alchemist Sprite Sheet 48x32_69: 1233532154
+      Tiny Alchemist Sprite Sheet 48x32_74: 1475833631
+      Tiny Alchemist Sprite Sheet 48x32_67: 889664429
+      Tiny Alchemist Sprite Sheet 48x32_47: -327133790
+      Tiny Alchemist Sprite Sheet 48x32_72: 125909163
+      Tiny Alchemist Sprite Sheet 48x32_65: -707559441
+      Tiny Alchemist Sprite Sheet 48x32_7: 947725096
+      Tiny Alchemist Sprite Sheet 48x32_43: 1649754552
+      Tiny Alchemist Sprite Sheet 48x32_10: 349685032
+      Tiny Alchemist Sprite Sheet 48x32_39: 768011474
+      Tiny Alchemist Sprite Sheet 48x32_12: 2145392547
+      Tiny Alchemist Sprite Sheet 48x32_20: 1301638972
+      Tiny Alchemist Sprite Sheet 48x32_3: 1894194775
+      Tiny Alchemist Sprite Sheet 48x32_1: 586787345
+      Tiny Alchemist Sprite Sheet 48x32_51: -138754182
+      Tiny Alchemist Sprite Sheet 48x32_48: 1582529872
+      Tiny Alchemist Sprite Sheet 48x32_45: -2096090638
+      Tiny Alchemist Sprite Sheet 48x32_13: 14212289
+      Tiny Alchemist Sprite Sheet 48x32_6: -2101613047
+      Tiny Alchemist Sprite Sheet 48x32_14: -697762406
+      Tiny Alchemist Sprite Sheet 48x32_32: -1827502777
+      Tiny Alchemist Sprite Sheet 48x32_9: 283794401
+      Tiny Alchemist Sprite Sheet 48x32_75: -1518729196
+      Tiny Alchemist Sprite Sheet 48x32_64: 1974478240
+      Tiny Alchemist Sprite Sheet 48x32_11: 1492224931
+      Tiny Alchemist Sprite Sheet 48x32_44: 83660367
+      Tiny Alchemist Sprite Sheet 48x32_29: 1879053168
+      Tiny Alchemist Sprite Sheet 48x32_36: -189907350
+      Tiny Alchemist Sprite Sheet 48x32_42: 772571088
+      Tiny Alchemist Sprite Sheet 48x32_15: -1576394881
+      Tiny Alchemist Sprite Sheet 48x32_38: 1810347053
+      Tiny Alchemist Sprite Sheet 48x32_49: 658479315
+      Tiny Alchemist Sprite Sheet 48x32_4: -1678026547
+      Tiny Alchemist Sprite Sheet 48x32_52: 1211683488
+      Tiny Alchemist Sprite Sheet 48x32_41: -864886169
+      Tiny Alchemist Sprite Sheet 48x32_61: 403366094
+      Tiny Alchemist Sprite Sheet 48x32_46: -1585200007
+      Tiny Alchemist Sprite Sheet 48x32_40: 591066646
+      Tiny Alchemist Sprite Sheet 48x32_28: -2051370529
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
