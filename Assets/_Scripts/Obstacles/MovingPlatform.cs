@@ -49,17 +49,13 @@ public class MovingPlatform : Platform
     {
         if (other.gameObject.TryGetComponent(out Player player))
         {
-            if (player.IsGrounded(out GameObject groundedObject))
+            if (player.IsGrounded(out GameObject groundedObject) || player.IsWalled())
             {
-                if (groundedObject == gameObject)
-                {
-                    other.transform.parent = transform;
-                    Debug.Log(groundedObject.gameObject.name);
-                }
-                else
-                {
-                    other.transform.parent = null;
-                }
+                other.transform.parent = transform;
+            }
+            else
+            {
+                other.transform.parent = null;
             }
         }
     }
