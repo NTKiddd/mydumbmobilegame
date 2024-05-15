@@ -17,7 +17,7 @@ public class PlayerIdle : PlayerGround
         
         player.canDash = true;
         
-        player.animator.Play("Idle");
+        player.animator.Play("Land");
     }
     
     public override void ExecuteUpdate()
