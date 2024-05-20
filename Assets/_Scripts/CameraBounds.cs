@@ -17,33 +17,35 @@ public class CameraBounds : MonoBehaviour
      {
          if (other.transform.CompareTag("Player"))
          {
-             if (CameraManager.Instance.currentBounds == null)
+             var hit = Physics2D.CircleCast(other.transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask("CameraBounds"));
+                 
+             if (Physics2D.CircleCast(other.transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask("CameraBounds")))
              {
-                 StartCoroutine(CameraManager.Instance.CameraMove(new Vector3(_bounds.center.x, _bounds.center.y, -10)));
-                 CameraManager.Instance.currentBounds = this;
+                 Debug.Log(hit.transform.gameObject.name);
              }
-             else
+             
+             if (hit.transform.gameObject == gameObject)
              {
-                 if (CameraManager.Instance.currentBounds != this)
-                 {
-                     CameraManager.Instance.bufferBounds = this;
-                 }
+                 StartCoroutine(CameraManager.Instance.CameraMove(new Vector3(_bounds.center.x, _bounds.center.y, -10f)));
              }
          }
      }
 
      private void OnTriggerExit2D(Collider2D other)
      {
-         if (other.transform.CompareTag("Player") && CameraManager.Instance.currentBounds == this)
+         if (other.transform.CompareTag("Player"))
          {
-             CameraManager.Instance.currentBounds = null;
              
-             if (CameraManager.Instance.bufferBounds != null)
-             {
-                 CameraManager.Instance.currentBounds = CameraManager.Instance.bufferBounds;
-                 CameraManager.Instance.bufferBounds = null;
-                 StartCoroutine(CameraManager.Instance.CameraMove(new Vector3(CameraManager.Instance.currentBounds._bounds.center.x, CameraManager.Instance.currentBounds._bounds.center.y, -10)));
-             }
+         }
+     }
+
+     public void MoveCamera()
+     {
+         if (CameraManager.Instance.currentBounds != this)
+         {
+             var coroutine = StartCoroutine(CameraManager.Instance.CameraMove(new Vector3(_bounds.center.x, _bounds.center.y, -10f)));
+             CameraManager.Instance.currentBounds = this;
+             CameraManager.Instance.cameraCoroutine = coroutine;
          }
      }
 }

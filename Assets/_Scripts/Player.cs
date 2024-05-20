@@ -66,10 +66,7 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.ExecuteUpdate();
 
-        if (transform.position.y < -10)
-        {
-            EventsManager.Instance.PlayerDeath();
-        }
+        
     }
     
     private void FixedUpdate()
@@ -119,9 +116,9 @@ public class Player : MonoBehaviour
         
         transform.position = CheckpointManager.Instance.lastCheckpoint;
         
-        //var scale = transform.localScale;
-        //scale.x = 1;
-        //transform.localScale = scale;
+        var scale = transform.localScale;
+        scale.x = 1;
+        transform.localScale = scale;
         facingRight = true;
     }
 }

@@ -70,7 +70,7 @@ public class PlayerGround : PlayerState
                         var distance = Vector2.Distance(startPoint, endPoint);
                         var direction = (startPoint - endPoint).normalized;
                         var force = direction * (distance * player.jumpForce);
-                        
+
                         _lineRenderer.positionCount = 2;
                         _lineRenderer.SetPosition(0, startPoint);
                         _lineRenderer.SetPosition(1, endPoint);
@@ -117,6 +117,11 @@ public class PlayerGround : PlayerState
         {
             player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + player.transform.localScale.y), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
         }
+    }
+
+    public override void ExecuteFixedUpdate()
+    {
+        base.ExecuteFixedUpdate();
     }
 
     public override void Transition()

@@ -45,7 +45,12 @@ public abstract class PlayerState : IState
 
     public virtual void ExecuteFixedUpdate()
     {
-        
+        var hit = Physics2D.CircleCast(player.transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask("CameraBounds"));
+
+        if (hit)
+        {
+            hit.transform.gameObject.GetComponent<CameraBounds>().MoveCamera();
+        }
     }
 
     public virtual void Exit()
