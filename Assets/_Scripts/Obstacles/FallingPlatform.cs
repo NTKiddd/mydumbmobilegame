@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
@@ -14,7 +15,7 @@ public class FallingPlatform : MonoBehaviour
 
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _col = GetComponent<Collider2D>();
     }
 
@@ -32,6 +33,7 @@ public class FallingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            _spriteRenderer.transform.DOShakePosition(_timeToFall, 0.1f, 10, 80f, false, false);
             StartCoroutine(WaitAndExecute(Fall, _timeToFall));
         }
     }

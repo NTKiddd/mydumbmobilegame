@@ -50,8 +50,7 @@ public class InputHandler : Singleton<InputHandler>
         if (touchCount > 0)
         {
             Touched?.Invoke(touches, touchCount);
-            //Debug.Log(Input.touches[0].position);
-            
+
             // Check if touch is inside screen
             // if (screenRect.Contains(Input.touches[0].position)) 
             // {
@@ -70,7 +69,7 @@ public class InputHandler : Singleton<InputHandler>
         {
             if (touches[i].phase == TouchPhase.Began)
             {
-                startPositions[i] = Camera.main.ScreenToWorldPoint(touches[i].position);
+                startPositions[i] = touches[i].position;
             }
         }
     }

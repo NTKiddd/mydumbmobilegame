@@ -16,8 +16,9 @@ public class PlayerIdle : PlayerGround
         Debug.Log(name);
         
         player.canDash = true;
-        
         player.animator.Play("Land");
+        
+        player.rb.velocity = new Vector2(player.rb.velocity.x * 0.5f, player.rb.velocity.y);
     }
     
     public override void ExecuteUpdate()

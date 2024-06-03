@@ -121,4 +121,12 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
         facingRight = true;
     }
+
+    public void EnterBounds()
+    {
+        // if (stateMachine.currentState is PlayerFall)
+        // {
+        //     rb.velocity = new Vector2(0, rb.velocity.y);
+        // }
+    }
 }

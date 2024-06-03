@@ -20,7 +20,7 @@ public class PlayerAir : PlayerState
         
         if (input.touchCount == 1)
         {
-            startPoint = input.startPositions[0];
+            startPoint = cam.ScreenToWorldPoint((Vector2)input.startPositions[0]);
             startPoint.z = 0;
             Touch touch = input.touches[0];
 
@@ -28,7 +28,7 @@ public class PlayerAir : PlayerState
         
             if (touch.phase == TouchPhase.Began)
             {
-                startPoint = input.startPositions[0];
+                startPoint = cam.ScreenToWorldPoint((Vector2)input.startPositions[0]);
                 startPoint.z = 0;
                 //Debug.Log("startPoint " + startPoint);
             }

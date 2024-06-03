@@ -41,21 +41,21 @@ public class PlayerGround : PlayerState
 
         if (input.touchCount > 0)
         {
-            startPoint = input.startPositions[0];
-            startPoint.z = 0;
+            // startPoint = input.startPositions[0];
+            // startPoint.z = 0;
             
             switch (input.touchCount)
             {
                 case 1:
                 {
                     Touch touch = input.touches[0];
-
+                    
                     if (touch.phase == TouchPhase.Began)
                     {
                         player.trajectory.ToggleTrajectory(true);
                         
                         _lineRenderer.positionCount = 1;
-                        _lineRenderer.SetPosition(0, startPoint);
+                        _lineRenderer.SetPosition(0, cam.WorldToScreenPoint(startPoint));
                         
                         //Debug.Log("Touch Pressed");
                         //Debug.Log(startPoint);
@@ -65,18 +65,16 @@ public class PlayerGround : PlayerState
                     {
                         touchStarted = true;
                         
-                        endPoint = cam.ScreenToWorldPoint(touch.position);
-                        endPoint.z = 0;
                         var distance = Vector2.Distance(startPoint, endPoint);
                         var direction = (startPoint - endPoint).normalized;
                         var force = direction * (distance * player.jumpForce);
 
                         _lineRenderer.positionCount = 2;
-                        _lineRenderer.SetPosition(0, startPoint);
-                        _lineRenderer.SetPosition(1, endPoint);
+                        //_lineRenderer.SetPosition(0, startPoint);
+                        //_lineRenderer.SetPosition(1, endPoint);
                         
                         // player.trajectory.ToggleTrajectory(true);
-                        // player.trajectory.Plot(player.rb, player.transform.position, Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);  
+                        //player.trajectory.Plot(player.rb, player.transform.position, Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);  
                         
                         //player.trajectory.poss = player.trajectory.SimulateTrajectory(player.transform.position, direction, player.jumpForce);
                     }
@@ -111,11 +109,18 @@ public class PlayerGround : PlayerState
                     break;
                 }
             } 
-        }
-        
-        if (touchStarted)
-        {
-            player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + player.transform.localScale.y), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
+            
+            if (touchStarted)
+            {
+                startPoint = cam.ScreenToWorldPoint((Vector2)input.startPositions[0]);
+                startPoint.z = 0;
+                endPoint = cam.ScreenToWorldPoint((Vector2)input.touches[0].position);
+                endPoint.z = 0;
+                _lineRenderer.SetPosition(0, startPoint);   
+                _lineRenderer.SetPosition(1, endPoint);
+                
+                player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + player.transform.localScale.y), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
+            }
         }
     }
 

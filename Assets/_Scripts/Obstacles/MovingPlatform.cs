@@ -8,12 +8,19 @@ using Vector2 = UnityEngine.Vector2;
 
 public class MovingPlatform : Platform
 {
+    private Rigidbody2D _rb;
+    
     private Vector2 startPos;
     private Vector2 endPos;
     [SerializeField] private GameObject endPosLocator;
 
     [SerializeField] private float _moveTime;
     [SerializeField] private float _waitTime;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -37,12 +44,18 @@ public class MovingPlatform : Platform
     {
         transform.DOMove(endPos, _moveTime).SetEase(Ease.Linear).SetDelay(_waitTime)
             .OnComplete(MoveBackward);
+        
+        // _rb.DOMove(endPos, _moveTime).SetEase(Ease.Linear).SetDelay(_waitTime)
+        //     .OnComplete(MoveBackward);
     }
     
     private void MoveBackward()
     {
         transform.DOMove(startPos, _moveTime).SetEase(Ease.Linear).SetDelay(_waitTime)
             .OnComplete(MoveForward);
+        
+        // _rb.DOMove(startPos, _moveTime).SetEase(Ease.Linear).SetDelay(_waitTime)
+        //     .OnComplete(MoveForward);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

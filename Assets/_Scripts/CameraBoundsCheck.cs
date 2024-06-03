@@ -5,11 +5,27 @@ using UnityEngine;
 
 public class CameraBoundsCheck : MonoBehaviour
 {
+    public GameEvent onPlayerEnterBounds;
+    private GameObject _player;
+
+    private void Awake()
+    {
+        _player = GetComponentInParent<Player>().gameObject;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.gameObject.layer == LayerMask.NameToLayer("CameraBounds"))
+        if (other.TryGetComponent(out CameraBounds bounds))
         {
-            other.transform.gameObject.GetComponent<CameraBounds>().MoveCamera();
+            Debug.Log("enter");
+            //other.transform.gameObject.GetComponent<CameraBounds>().MoveCamera();
+            onPlayerEnterBounds.Raise(this, other);
+
+            if (bounds.IsStatic())
+            {
+                CameraManager.Instance.cineCam.Follow = null;
+            }
+            CameraManager.Instance.TransitCamera(bounds);
         }
     }
 }
