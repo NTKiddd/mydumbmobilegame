@@ -36,7 +36,7 @@ Transform:
   - {fileID: 8446325313313782396}
   - {fileID: 8446325313521295245}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2208710772711860667
 PrefabInstance:
@@ -46,6 +46,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 8446325314277196193}
     m_Modifications:
+    - target: {fileID: 7751128860372121141, guid: 9b4f7a2d36057f2489d861aaa2a22156, type: 3}
+      propertyPath: _transitionSpeed
+      value: 3.65
+      objectReference: {fileID: 0}
     - target: {fileID: 7751128860372121142, guid: 9b4f7a2d36057f2489d861aaa2a22156, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -93,6 +97,10 @@ PrefabInstance:
     - target: {fileID: 7751128860372121143, guid: 9b4f7a2d36057f2489d861aaa2a22156, type: 3}
       propertyPath: m_Name
       value: CameraManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160434741386300417, guid: 9b4f7a2d36057f2489d861aaa2a22156, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

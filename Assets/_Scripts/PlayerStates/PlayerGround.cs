@@ -119,7 +119,8 @@ public class PlayerGround : PlayerState
                 _lineRenderer.SetPosition(0, startPoint);   
                 _lineRenderer.SetPosition(1, endPoint);
                 
-                player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + player.transform.localScale.y), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
+                player.trajectory.Plot(player.rb, new Vector2(player.transform.position.x, player.transform.position.y + 1), Vector3.ClampMagnitude(startPoint - endPoint, player.maxDrag) * player.jumpForce, 50);
+                //Debug.Log(player.transform.position.y + player.transform.localScale.y);
             }
         }
     }
