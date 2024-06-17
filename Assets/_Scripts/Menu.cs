@@ -50,7 +50,7 @@ public class Menu : MonoBehaviour
 
     public void Quit()
     {
-        EditorApplication.ExitPlaymode();
+        Application.Quit();
     }
     
     public void UpdateMusicVolume(Slider slider)

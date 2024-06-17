@@ -34,14 +34,9 @@ public class PauseMenu : MonoBehaviour, ITouch
 
     public void Quit()
     {
-        if (Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        }
-        else
-        {
+        
             Application.Quit();
-        }
+        
     }
 
     public void OnTouch(Touch[] touches, int touchCount)
