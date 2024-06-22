@@ -8,6 +8,6 @@ public class MySignalReceiver : MonoBehaviour, INotificationReceiver
 {
     public void OnNotify(Playable origin, INotification notification, object context)
     {
-        CameraManager.Instance.Shake(6f, 0.15f);
+        CameraManager.Instance.Shake(6.5f, 0.15f);
     }
 }

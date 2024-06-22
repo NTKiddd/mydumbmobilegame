@@ -54,8 +54,9 @@ public class PlayerGround : PlayerState
                     {
                         player.trajectory.ToggleTrajectory(true);
                         
-                        _lineRenderer.positionCount = 1;
+                        _lineRenderer.positionCount = 2;
                         _lineRenderer.SetPosition(0, cam.WorldToScreenPoint(startPoint));
+                        _lineRenderer.SetPosition(1, _lineRenderer.GetPosition(0));
                         
                         //Debug.Log("Touch Pressed");
                         //Debug.Log(startPoint);
@@ -69,7 +70,7 @@ public class PlayerGround : PlayerState
                         var direction = (startPoint - endPoint).normalized;
                         var force = direction * (distance * player.jumpForce);
 
-                        _lineRenderer.positionCount = 2;
+                        //_lineRenderer.positionCount = 2;
                         //_lineRenderer.SetPosition(0, startPoint);
                         //_lineRenderer.SetPosition(1, endPoint);
                         
@@ -102,9 +103,10 @@ public class PlayerGround : PlayerState
                     
                     if (touch.phase == TouchPhase.Canceled)
                     {
-                        _lineRenderer.positionCount = 0;
-                        player.trajectory.ToggleTrajectory(false);
-                        touchStarted = false;
+                        Debug.Log("Touch Canceled");
+                        // _lineRenderer.positionCount = 0;
+                        // player.trajectory.ToggleTrajectory(false);
+                        // touchStarted = false;
                     }
                     break;
                 }

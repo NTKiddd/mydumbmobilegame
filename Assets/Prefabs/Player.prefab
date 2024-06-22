@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9f19899c5f2aa48a41950c0e61d46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlayerEnterBounds: {fileID: 0}
+  onPlayerEnterBounds: {fileID: 11400000, guid: f5f79a2aa9fd59249beab88a8bddfc8f, type: 2}
 --- !u!1 &4631942533277124436
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
@@ -282,13 +282,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.00024, y: -1.9586048, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4631942533277124437}
   - {fileID: 4631942533466580402}
   - {fileID: 2117660566}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4631942533746620390
 SpriteRenderer:
@@ -360,7 +360,7 @@ MonoBehaviour:
   jumpableLayer:
     serializedVersion: 2
     m_Bits: 8
-  jumpForce: 15
+  jumpForce: 14.25
   maxDrag: 2.5
   gravity: 12
   wallSlideSpeed: 0.7
@@ -383,13 +383,13 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 4631942533746620388}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: EnterBounds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -501,8 +501,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1273751899
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:

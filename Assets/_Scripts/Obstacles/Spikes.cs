@@ -12,7 +12,7 @@ public class Spikes : MonoBehaviour
         if (player != null)
         {
             Debug.Log("die");
-            EventsManager.Instance.PlayerDeath();
+            EventsManager.Instance.PlayerDie();
         }
     }
 }

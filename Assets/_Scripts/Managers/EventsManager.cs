@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class EventsManager : Singleton<EventsManager>
 {
     public event Action OnPlayerDeath;
-    public void PlayerDeath()
+    public void PlayerDie()
     {
         OnPlayerDeath?.Invoke();
     }

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Collider2D col { get; private set; }
     public Animator animator { get; private set; }
+    public GameEvent onPlayerDie;
 
     [SerializeField] private Transform wallCheck;
 
@@ -54,19 +55,27 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-        //EventsManager.Instance.OnPlayerDeath -= Respawn;
+        EventsManager.Instance.OnPlayerDeath -= Respawn;
     }
 
     private void Start()
     {
         stateMachine.SetState(new PlayerIdle());
+        
+        if (!Application.isEditor)
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 60;
+        }
+        else
+        {
+            Debug.Log("running in editor");
+        }
     }
 
     private void Update()
     {
         stateMachine.currentState.ExecuteUpdate();
-
-        
     }
     
     private void FixedUpdate()
@@ -112,6 +121,15 @@ public class Player : MonoBehaviour
     // Respawn at last checkpoint
     public void Respawn()
     {
+        StartCoroutine(RespawnCoroutine());
+    }
+    
+    private IEnumerator RespawnCoroutine()
+    {
+        rb.isKinematic = true;
+        yield return new WaitForSeconds(0.3f);
+        
+        rb.isKinematic = false;
         rb.velocity = Vector2.zero;
         
         transform.position = CheckpointManager.Instance.lastCheckpoint;

@@ -25,24 +25,6 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void ToggleMainMenu(bool value)
-    {
-        _mainMenu.SetActive(value);
-        if (value == true)
-        {
-            _depthOfField.focusDistance.value = 3f;
-        }
-    }
-    
-    public void ToggleOptionMenu(bool value)
-    {
-        _optionMenu.SetActive(value);
-        if (value == true)
-        {
-            _depthOfField.focusDistance.value = 1f;
-        }
-    }
-
     public void OnDisable()
     {
         _depthOfField.focusDistance.value = 3f;

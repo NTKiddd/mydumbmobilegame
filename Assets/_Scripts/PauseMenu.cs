@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour, ITouch
@@ -31,13 +32,7 @@ public class PauseMenu : MonoBehaviour, ITouch
         Time.timeScale = 1f;
         _pauseMenu.SetActive(false);
     }
-
-    public void Quit()
-    {
-        
-            Application.Quit();
-        
-    }
+    
 
     public void OnTouch(Touch[] touches, int touchCount)
     {
@@ -51,5 +46,10 @@ public class PauseMenu : MonoBehaviour, ITouch
                 Pause();
             }
         }
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

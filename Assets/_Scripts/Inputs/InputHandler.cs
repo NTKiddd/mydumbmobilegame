@@ -49,6 +49,7 @@ public class InputHandler : Singleton<InputHandler>
 
         if (touchCount > 0)
         {
+            Debug.Log("touch detected");
             Touched?.Invoke(touches, touchCount);
 
             // Check if touch is inside screen
