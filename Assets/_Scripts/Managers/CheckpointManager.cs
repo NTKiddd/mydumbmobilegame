@@ -9,6 +9,6 @@ public class CheckpointManager : Singleton<CheckpointManager>
 
     private void Start()
     {
-        Debug.Log(this.gameObject.name);
+        //Debug.Log(this.gameObject.name);
     }
 }

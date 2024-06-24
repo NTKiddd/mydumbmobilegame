@@ -58,6 +58,11 @@ public class PlayerSlide : PlayerGround
         {
             stateMachine.SetState(new PlayerIdle());
         }
+
+        if (!player.IsWalled())
+        {
+            stateMachine.SetState(new PlayerFall());
+        }
     }
 
     protected override void OnTouched(Touch[] touches, int touchCount)

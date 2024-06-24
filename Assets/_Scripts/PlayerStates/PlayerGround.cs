@@ -64,13 +64,19 @@ public class PlayerGround : PlayerState
 
                     if (touch.phase == TouchPhase.Moved)
                     {
+                        //Debug.Log("moved");
                         touchStarted = true;
                         
                         var distance = Vector2.Distance(startPoint, endPoint);
                         var direction = (startPoint - endPoint).normalized;
                         var force = direction * (distance * player.jumpForce);
 
-                        //_lineRenderer.positionCount = 2;
+                        if (_lineRenderer.positionCount != 2)
+                        {
+                            player.trajectory.ToggleTrajectory(true);
+                            _lineRenderer.positionCount = 2;
+                        }
+                        
                         //_lineRenderer.SetPosition(0, startPoint);
                         //_lineRenderer.SetPosition(1, endPoint);
                         
@@ -82,6 +88,11 @@ public class PlayerGround : PlayerState
 
                     if (touch.phase == TouchPhase.Ended)
                     {
+                        if (!touchStarted)
+                        {
+                            break;
+                        }
+                        
                         endPoint = cam.ScreenToWorldPoint(touch.position);
                         endPoint.z = 0;
                         

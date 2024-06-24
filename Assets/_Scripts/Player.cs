@@ -99,7 +99,14 @@ public class Player : MonoBehaviour
 
     public bool IsWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.15f, jumpableLayer);
+        var hit = Physics2D.OverlapCircle(wallCheck.position, 0.15f, jumpableLayer);
+        
+        if (hit)
+        {
+            return !hit.TryGetComponent(out PlatformEffector2D platform);
+        }
+
+        return false;
     }
 
     private void WallSlide()
@@ -126,12 +133,12 @@ public class Player : MonoBehaviour
     
     private IEnumerator RespawnCoroutine()
     {
+        rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         yield return new WaitForSeconds(0.3f);
         
         rb.isKinematic = false;
-        rb.velocity = Vector2.zero;
-        
+
         transform.position = CheckpointManager.Instance.lastCheckpoint;
         
         var scale = transform.localScale;

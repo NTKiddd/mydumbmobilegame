@@ -10,9 +10,6 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private GameObject _optionMenu;
-    [SerializeField] private GameObject _mainMenu;
-    
     [SerializeField] private VolumeProfile _volumeProfile;
     private DepthOfField _depthOfField;
 
@@ -35,13 +32,18 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
     
+    public void StartGame()
+    {
+        MenuTrigger.isMainMenu = true;
+    }
+    
     public void UpdateMusicVolume(Slider slider)
     {
-        AudioManager.Instance.AdjustMusicVolume(slider.value / 10);
+        AudioManager.Instance.AdjustVolume(AudioManager.AudioType.Music, slider.value);
     }
     
     public void UpdateSFXVolume(Slider slider)
     {
-        AudioManager.Instance.AdjustSFXVolume(slider.value / 10);
+        AudioManager.Instance.AdjustVolume(AudioManager.AudioType.SFX, slider.value);
     }
 }

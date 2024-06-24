@@ -32,12 +32,13 @@ public class CameraManager : Singleton<CameraManager>
     private IEnumerator OnCameraTransit(CameraBounds bounds)
     {
         //StopCoroutine(cameraCoroutine);
-        float elapsedTime = 0;
+        float elapsedTime = 0f;
         float waitTime = 2f;
         _confiner.m_BoundingShape2D = null;
         
         while (elapsedTime < waitTime)
         {
+            Debug.Log("shit");
             var targetPos = new Vector3(bounds.transform.position.x, bounds.transform.position.y, -10f);
             cineCam.transform.position = Vector3.Lerp(cineCam.transform.position, targetPos, Time.deltaTime * _transitionSpeed);
             elapsedTime += Time.deltaTime;

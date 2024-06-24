@@ -24,13 +24,22 @@ public class AudioManager : Singleton<AudioManager>
         _musicSource.Stop();
     }
     
-    public void AdjustSFXVolume(float value)
+    public void AdjustVolume(AudioType type, float value)
     {
-        _sfxSource.volume = value;
+        switch (type)
+        {
+            case AudioType.Music:
+                _musicSource.volume = value / 10;
+                break;
+            case AudioType.SFX:
+                _sfxSource.volume = value / 10;
+                break;
+        }
     }
     
-    public void AdjustMusicVolume(float value)
+    public enum AudioType
     {
-        _musicSource.volume = value;
+        Music,
+        SFX
     }
 }
