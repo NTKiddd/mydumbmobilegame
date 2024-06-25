@@ -35,10 +35,10 @@ public class CameraManager : Singleton<CameraManager>
         float elapsedTime = 0f;
         float waitTime = 2f;
         _confiner.m_BoundingShape2D = null;
-        
+        cineCam.Follow = null;
+
         while (elapsedTime < waitTime)
         {
-            Debug.Log("shit");
             var targetPos = new Vector3(bounds.transform.position.x, bounds.transform.position.y, -10f);
             cineCam.transform.position = Vector3.Lerp(cineCam.transform.position, targetPos, Time.deltaTime * _transitionSpeed);
             elapsedTime += Time.deltaTime;
@@ -49,6 +49,7 @@ public class CameraManager : Singleton<CameraManager>
                 {
                     cineCam.Follow = _player.transform;
                 }
+                //Debug.Log(_confiner.m_BoundingShape2D);
             }
             yield return null;
         }
