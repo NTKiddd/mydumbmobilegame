@@ -27,20 +27,21 @@ public class Fade : MonoBehaviour
 
     private IEnumerator FadeCoroutine()
     {
-        Debug.Log("gooo");
+        yield return new WaitForSeconds(0.5f);
+        
         _image.enabled = true;
         _image.CrossFadeAlpha(0f, 0, false);
         
         // Fade in
-        _image.CrossFadeAlpha(1.0f, 0.3f, false);
-        yield return new WaitForSeconds(0.3f);
+        _image.CrossFadeAlpha(1.0f, 0.5f, false);
+        yield return new WaitForSeconds(0.5f);
 
         // Optional wait time between fades
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
 
         // Fade out
-        _image.CrossFadeAlpha(0.0f, 0.3f, false);
-        yield return new WaitForSeconds(0.3f);
+        _image.CrossFadeAlpha(0.0f, 0.5f, false);
+        yield return new WaitForSeconds(0.5f);
         
         _image.enabled = false;
     }

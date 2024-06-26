@@ -22,11 +22,10 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.SetActive(false);
     }
 
-    public void LoadDialogue(string[] messages, string npcName)
+    public void LoadDialogue(string[] messages)
     {
         _dialoguePanel.SetActive(true);
         
-        _nameDisplay.text = npcName;
         _messages = messages;
 
         StartCoroutine(DisplayMessage(0));

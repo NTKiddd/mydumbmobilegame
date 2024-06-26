@@ -107,7 +107,7 @@ public class PlayerGround : PlayerState
                             Vector3 force = startPoint - endPoint;
                             Vector3 clampedForce = Vector3.ClampMagnitude(force, player.maxDrag) * player.jumpForce;
                             
-                            player.Flip();
+                            //player.Flip();
                             stateMachine.SetState(new PlayerJump(clampedForce));
                         }
                     }

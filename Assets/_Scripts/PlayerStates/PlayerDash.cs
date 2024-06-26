@@ -22,7 +22,7 @@ public class PlayerDash : PlayerState
         
         name = "Dash";
         Debug.Log(name);
-        Debug.Log(_dashDir);
+        //Debug.Log(_dashDir);
         
         _spriteRenderer = player.GetComponent<SpriteRenderer>();
         _spriteRenderer.color = Color.cyan;

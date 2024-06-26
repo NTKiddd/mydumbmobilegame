@@ -122,6 +122,7 @@ public class Player : MonoBehaviour
         var scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+        Debug.Log(transform.localScale.x);
         facingRight = !facingRight;
     }
     
@@ -133,9 +134,12 @@ public class Player : MonoBehaviour
     
     private IEnumerator RespawnCoroutine()
     {
+        stateMachine.SetState(new PlayerDie());
+        yield return new WaitForSeconds(0.5f);
+        
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         
         rb.isKinematic = false;
 
@@ -145,13 +149,11 @@ public class Player : MonoBehaviour
         scale.x = 1;
         transform.localScale = scale;
         facingRight = true;
+        stateMachine.SetState(new PlayerIdle());
     }
 
-    public void EnterBounds()
+    public void Stop()
     {
-        // if (stateMachine.currentState is PlayerFall)
-        // {
-        //     rb.velocity = new Vector2(0, rb.velocity.y);
-        // }
+        rb.velocity = new Vector2(0, rb.velocity.y);
     }
 }

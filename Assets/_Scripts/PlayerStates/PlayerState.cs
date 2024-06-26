@@ -25,7 +25,7 @@ public abstract class PlayerState : IState
     {
         input = player.input;
         input.Touched += OnTouched;
-        
+
         cam = player.cam;
     }
 
@@ -61,5 +61,13 @@ public abstract class PlayerState : IState
     protected virtual void OnTouched(Touch[] touches, int touchCount)
     {
         //Debug.Log("Touched");
+    }
+    
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Dead"))
+        {
+            stateMachine.SetState(new PlayerDie());
+        }
     }
 }

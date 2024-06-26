@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -14,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Awake()
     {
-        _ownedNPC = GetComponent<NPC>();
+        
     }
 
     private void OnEnable()
@@ -36,7 +37,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             _isActive = true;
             
-            dialogueManager.LoadDialogue(messages, _ownedNPC.npcName);
+            dialogueManager.LoadDialogue(messages);
             _messageIndex = 0;
             StartCoroutine(dialogueManager.DisplayMessage(_messageIndex));
         }
@@ -49,13 +50,31 @@ public class DialogueTrigger : MonoBehaviour
             if (_messageIndex == messages.Length)
             {
                 _isActive = false;
+                dialogueManager.CloseDialogue();
             }
         }
     }
-    
+
+    private void Update()
+    {
+        if (InputHandler.Instance.touchCount > 0 && _isActive && _messageIndex == messages.Length - 1)
+        {
+            Debug.Log("touch");
+            StartDialogue();
+        }
+    }
+
     private void StopDialogue()
     {
         _isActive = false;
         dialogueManager.CloseDialogue();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartDialogue();
+        }
     }
 }
